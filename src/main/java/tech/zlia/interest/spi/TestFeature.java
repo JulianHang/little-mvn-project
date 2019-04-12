@@ -1,6 +1,4 @@
 package tech.zlia.interest.spi;
-
-import java.util.Iterator;
 import java.util.ServiceLoader;
 
 /**
@@ -12,10 +10,14 @@ public class TestFeature {
 
     public static void main(String[] args) {
         ServiceLoader<DemoService> sl = ServiceLoader.load(DemoService.class);
-        Iterator<DemoService> iterator = sl.iterator();
-        while (iterator.hasNext()){
-            DemoService ds = iterator.next();
+        for (DemoService ds : sl) {
             ds.test();
         }
     }
 }
+/* 结果展示
+
+TestADemoService
+TestBDemoService
+
+ */
