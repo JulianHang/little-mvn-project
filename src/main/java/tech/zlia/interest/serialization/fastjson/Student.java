@@ -84,24 +84,6 @@ public class Student implements Serializable {
         this.sex = sex;
     }
 
-    public static void main(String[] args) {
-        Student student = new Student();//必须是空的构造函数才可以自定义序列化
-        student.setName("name");
-        student.setId(1L);
-        student.setSex(Sex.MAN);
-//        System.out.println(JSON.toJSON(student).toString());
-//        System.out.println(JSON.toJSONString(student));
-        String str = JSON.toJSONString(student);
-//        String str1 = "{\"id\":1,\"name\":\"name\",\"sex\":\"MAN\"}";
-        Student stu1 = JSON.parseObject(str,Student.class);
-        System.out.println(stu1);
-//        System.out.println(stu1.sex.getCode());
-//        System.out.println(stu1.sex.getDes());
-//        System.out.println(JSON.toJSONString(stu1));
-//        String str2 = "{\"id\":1,\"name\":\"name\",\"sex\":{\"code\":\"1\",\"des\":\"男\"}}";
-//        JSON.parseObject(str2, Student.class);
-    }
-
     @Override
     public String toString(){
         return "{\"id\":" + id + ",\"name\":" + "\"" + name + "\"" + ",\"sex\":" + sex + "}";
